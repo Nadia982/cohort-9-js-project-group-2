@@ -176,8 +176,7 @@ select {
 }
 
 .colorButtons:hover {
-    width: 105%;
-    height: 105%;
+    border: 3px solid gray;
 }
 
 .green {
@@ -219,7 +218,7 @@ select {
 
 .style-label {
     display: block;
-    width: 100%;
+    width: 90%;
     text-align: center;
 }
 
