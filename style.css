@@ -1,45 +1,89 @@
+/* ELEMENT STYLING */
+
+* {
+    border: 1px solid red;
+}
+
 body {
     font-family: "Trebuchet MS", sans-serif;
+    color: #323232;
+    width: 90%;
+    min-width: 200px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+h1 {
+    flex-basis: 40%;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    flex-shrink: 1;
 }
 
 nav {
-    display: flex;
-    justify-content: flex-end;
+    line-height: 2rem;
+    flex-basis: 60%;
+    flex-shrink: 0;
+    text-align: right;
 }
 
 li {
     padding: 0 1em;
-}
-
-h1 {
-    font-weight: 700;
-}
-
-li {
+    display: inline;
+    font-size: 1.1rem;
     list-style-type: none;
 }
 
-button {
-    margin-top: 1em;
-    padding: 1em;
-    font-size: 1.5em;
-    border-radius: 10px;
+li:first-of-type {
+    padding-left: 0;
 }
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #323232;
+}
+
+button {
+    margin: 2em 0 0 0;
+    border: 3px solid darkgray;
+    padding: 0.5em 1em;
+    font-size: 1.3em;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    background: whitesmoke;
+}
+
+button:hover {
+    background: #323232;
+    color: whitesmoke;
+}
+
+/* ID-SPECIFIC STYLING */
 
 #button-div {
     text-align: center;
 }
 
-#new-quote-button {
-    text-align: center;
-}
-
 #quote-div {
+    margin: 1em auto;
     background-color: #e6e6ff;
+    border-radius: 10px;
+    min-height: 400px;
 }
 
 #quote {
     padding: 2em 0;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
 }
