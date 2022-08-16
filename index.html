@@ -14,18 +14,59 @@
     <header>
         <h1>Quote Generator</h1>
         <nav>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about"></a>About</li>
-            <li><a href="#all-quotes"></a>All quotes</li>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about"></a>About</li>
+                <li><a href="#all-quotes"></a>All quotes</li>
+            </ul>
         </nav>
     </header>
     <main>
-        <div id="button-div">
-            <button id="new-quote-button"><i class="fa-solid fa-arrow-rotate-right"></i> New quote</button>
+        <div class="button-div">
+            <!--NEW QUOTE BUTTON-->
+            <button onclick="changeQuote()" class="main-button" id="new-quote-button"><i
+                    class="fa-solid fa-arrow-rotate-right"></i> New quote</button>
+
+            <!--STYLE BUTTONS-->
+
+            <div class="colorButtons-container styles">
+                <p class="style-label">Font Color</p>
+                <button onclick="changeFontColor(event.target.value)" class="colorButtons green" value="green"></button>
+                <button onclick="changeFontColor(event.target.value)" class="colorButtons red" value="red"></button>
+                <button onclick="changeFontColor(event.target.value)" class="colorButtons blue" value="blue"></button>
+                <button onclick="changeFontColor(event.target.value)" class="colorButtons yellow"
+                    value="yellow"></button>
+                <button onclick="randomFontColor()" class="colorButtons random" value="green">Random</button>
+            </div>
+
+            <div class="colorButtons-container styles">
+                <br>
+                <p class="style-label">Background</p>
+                <button onclick="changeBackgroundColor(event.target.value)" class="colorButtons orange"
+                    value="orange"></button>
+                <button onclick="changeBackgroundColor(event.target.value)" class="colorButtons gray"
+                    value="gray"></button>
+                <button onclick="changeBackgroundColor(event.target.value)" class="colorButtons black"
+                    value="black"></button>
+                <button onclick="changeBackgroundColor(event.target.value)" class="colorButtons violet"
+                    value="violet"></button>
+                <button onclick="randomBackgroundColor()" class="colorButtons random" value="green">Random</button>
+            </div>
+
+
+            <!--SHOW STYLE BUTTON-->
+            <button onclick="styleAppear()" class="main-button">Change style</button>
+
         </div>
-        <div id="quote-div">
-            <p id="quote">"Quote text goes here"</p>
+        <div class="main-container" id="quote-div">
+            <p class="main-text">"One thing I know, that I know nothing. This is the source of my wisdom."
+            </p>
+            <p class="main-text-author">
+                - Socrates
+            </p>
+
         </div>
+
     </main>
 
     <script src="script.js"></script>
