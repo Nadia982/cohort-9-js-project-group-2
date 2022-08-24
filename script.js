@@ -1,43 +1,17 @@
-// The JavaScript code below was contributed by Kevin Klein (https://github.com/KevinKlain).
+let quotes = [];
 
-let quotes = [
-    {
-        quote: "One thing I know, that I know nothing. This is the source of my wisdom.",
-        author: "- Socrates"
-    },
-    {
-        quote: "Wise men speak because they have something to say; Fools because they have to say something",
-        author: "- Plato"
-    },
-    {
-        quote: 'It is more important to know what sort of person has a disease than to know what sort of disease a person has.',
-        author: '- Hippocrates'
-    },
-    {
-        quote: 'Pay attention to your enemies, for they are the first to discover your mistakes.',
-        author: '- Antisthenes'
-    },
-    {
-        quote: 'You will never do anything in this world without courage. It is the greatest quality of the mind next to honor.',
-        author: '- Aristotle'
-    },
-    {
-        quote: 'Let food be thy medicine and medicine be thy food.',
-        author: '- Hippocrates'
-    },
-    {
-        quote: 'Wait for the wisest of all counselors, time.',
-        author: '- Pericles'
-    },
-    {
-        quote: 'Life is short, the art long.',
-        author: '- Hippocrates'
-    },
-    {
-        quote: 'One of the penalties for refusing to participate in politics is that you end up being governed by your inferiors.',
-        author: '- Plato'
-    },
-];
+fetch('https://quote-garden.herokuapp.com/api/v3/quotes')
+
+    .then((response) => response.json())
+    .then((response) => quotes = response.data)
+
+//button to call a function to increment page no. Number at top stating current page. could get quote from random page.
+//or, when user clicks random quote. Or, a button that goes to the API with a random page, bring back the list
+//and select from that list. 
+//Extension idea 1- start with a button to increment the API page no. https://quote-garden.herokuapp.com/api/v3/quotes?page=2
+//Extension idea 2 - random quote from a random page.
+
+// The JavaScript below was contributed by Kevin Klein (https://github.com/KevinKlain)
 
 const colorArr = ['red', 'green', 'blue', 'yellow', 'pink', 'silver']
 const backgroundArr = ['orange', 'gray', 'black', 'violet', 'aqua', 'darkgoldenrod']
@@ -48,8 +22,8 @@ let mainContainer = document.querySelector('.main-container');
 
 const changeQuote = () => {
     const randomNumber = Math.floor(Math.random() * quotes.length);
-    document.querySelector(".main-text").innerHTML = quotes[randomNumber].quote;
-    document.querySelector(".main-text-author").innerHTML = quotes[randomNumber].author;
+    document.querySelector(".main-text").innerHTML = quotes[randomNumber].quoteText;
+    document.querySelector(".main-text-author").innerHTML = quotes[randomNumber].quoteAuthor;
 }
 
 const changeFontColor = (color) => {
